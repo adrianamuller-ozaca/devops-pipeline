@@ -1,0 +1,28 @@
+nome : CI
+
+em :
+  empurre :
+    ramos : ["principal"]
+  pull_request :
+    ramos : ["principal"]
+  
+  workflow_dispatch :
+  
+  trabalhos :
+    build-job :
+      run-on : ubuntu-latest
+      passos :
+        - usa : ações/ckeckout@v3
+        - execute : python3 -V
+        
+    trabalho de teste :
+      run-on : ubuntu-latest
+      passos :
+        - usa : ações/ckeckout@v3
+        - execute : python3 teste.py
+        
+    trabalho de implantação :
+      run-on : ubuntu-latest
+      passos :
+        - usa : ações/ckeckout@v3
+        - executar : echo "Finalizado"
